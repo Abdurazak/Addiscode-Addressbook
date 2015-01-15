@@ -7,7 +7,17 @@ import java.util.*;
  */
 public class ContactData {
     public ResponseStatus ResponseStatus;
+    public Contact Contact;
     public List<Contact> Contacts;
+
+
+    public Contact getContact() {
+        return Contact;
+    }
+
+    public void setContact(Contact contact) {
+        Contact = contact;
+    }
 
     public ResponseStatus getResponseStatus() {
         return ResponseStatus;

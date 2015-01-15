@@ -1,7 +1,9 @@
 package com.addiscan.addiscodeaddressbook;
 
 import android.app.Activity;
+import android.location.Address;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,9 +13,15 @@ import android.widget.TextView;
 import com.addiscan.addiscodeaddressbook.apihandler.AddressbookAPIHandler;
 import com.addiscan.addiscodeaddressbook.apinterface.IAddressbook;
 import com.addiscan.addiscodeaddressbook.clientdata.ClientData;
+import com.addiscan.addiscodeaddressbook.models.Contact;
 import com.addiscan.addiscodeaddressbook.models.ContactData;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 import retrofit.Callback;
+import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
@@ -27,16 +35,15 @@ public class Main extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView view = (TextView) findViewById(R.id.view);
+        TextView view = (TextView) findViewById(R.id.view);
+
+        //List<Contact> contacts = new ArrayList<Contact>();
+        //contacts = ClientData.getContacts();
         Button getBtn = (Button) findViewById(R.id.getBtn);
-        getBtn.setOnClickListener(new View.OnClickListener(){
+        //ClientData.getContact("6eae2c28-03fa-42b7-8b9f-b1cb634d8386").getFirstName();
+        //view.setText(ClientData.GetContacts().get(0).toString());
+        view.setText(ClientData.GetContacts().size());
 
-            @Override
-            public void onClick(View v) {
-
-                view.setText(ClientData.getContacts().get(0).getFirstName());
-            }
-        });
     }
 
 

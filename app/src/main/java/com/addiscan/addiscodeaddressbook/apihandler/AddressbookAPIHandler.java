@@ -9,7 +9,7 @@ import retrofit.RestAdapter;
  */
 public class AddressbookAPIHandler {
 
-    private static final String API_URL = "http://10.22.15.45:8015/api";
+    private static final String API_URL = "http://192.168.1.123:8015/api";
     private static RestAdapter restAdapter;
     private static RestAdapter getRestAdapter(){
         if(restAdapter==null){
